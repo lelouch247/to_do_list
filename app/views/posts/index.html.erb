@@ -1,0 +1,21 @@
+<h1> To Do List </h1>
+<hr />
+
+<%= link_to 'Create New Item To Do', new_post_path %>
+
+<% if @posts.empty? %>
+  <h3> There are no more items to do on your list. Please add soome more! <h3>
+<% else %>
+<ul>
+<% @posts.each do |post| %>
+  <li>
+    <%= check_box_tag 'post.ids[]', post.id %>
+    <%=link_to post.title, post_path(post) %>
+    <span> - </span>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <span> - </span>
+    <%= link_to 'Delete', post_path(post), method: :delete %>
+  </li>
+  <% end %>
+</ul>
+<% end %>

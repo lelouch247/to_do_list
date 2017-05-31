@@ -1,0 +1,14 @@
+<h1>
+  <%= @posts.title %>
+</h1>
+
+<blockquote>
+  <%= @posts.body %>
+</blockquote>
+
+<i> <%= @posts.author%> </i>
+<i> Posted At: <%= @posts.created_at %> </i>
+
+<br />
+
+<%= link_to 'To Do List', root_path %>
